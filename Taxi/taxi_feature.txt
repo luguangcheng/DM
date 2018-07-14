@@ -1,0 +1,24 @@
+train_data:  1458644*11    test_data:  625134*9
+
+id : useless
+vender_id : 1,2
+pickup_datetime : [2016-01-01,2016-06-30]   month   week  day
+dropoff_datetime : [2016-01-01,2016-07-01]
+passenger_count : 0,1,2,3,4,5,6,7,8,9    （7,8,9很少，可去）
+pickup_longitude : [-121.93,-61.33]  most [-73.99,-73.96]
+pickup_latitude :[34.35,51.88]  most [40.73,40.76]
+dropoff_longitude : [-121.93,-61.33]  most [-73.99,-73.96]
+dropoff_latitude :[32.18,43.92]  most [40.73,40.76]
+store_and_fwd_flag : [N,Y]  1450599:8045
+trip_duration
+
+排序特征
+月份、星期、时间段乘车次数的排序（表明那段时间比较繁忙）
+
+train_data_0722.csv  1458644*55  时间的排序特征、dummy特征
+train_data_0722_1.csv  1458579*55  去除65个异常值（passenger_count为6、7、8、0）
+train_data_0723_1.csv  1458530*67  去除地理偏移较大的值；加入地理分类、排序特征（未dummy）
+
+/home/luguangcheng/Taxi/train_data_lgc_1.csv
+
+特征：时间特征、地理特征、速度特征、基础特征
